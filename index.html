@@ -91,12 +91,13 @@
         const score ={
             human: 0,
             computer: 0,
+            
             increaseHuman: function () {
                 this.human++
             },
             increaseComputer: function () {
                 this.computer++
-            },
+            },            
 
             draw: function(){
                 canvasCtx.font = "bold 72px Arial"
@@ -104,8 +105,20 @@
                 canvasCtx.textBaseline = "top"
                 canvasCtx.fillStyle = "#01341D"
                 canvasCtx.fillText(this.human, field.w/4, 20)
-                canvasCtx.fillText(this.computer, field.w/4 + field.w/2, 20)
+                canvasCtx.fillText(this.computer, field.w/4 + field.w/2, 20)                
             }
+        }
+
+        //marca git hub
+        const marcaGitHub = {
+            marca: "github.com/gmandreola",
+
+            draw: function() {
+                canvasCtx.font = "bold italic 56px Arial"
+                canvasCtx.fillStyle = "#01341D"
+                canvasCtx.fillText(this.marca, field.w/2, field.h/2)
+            },
+
         }
 
         // bola
@@ -201,7 +214,8 @@
             leftPaddle.draw()
             rightPaddle.draw()
             score.draw()
-            ball.draw()            
+            ball.draw()
+            marcaGitHub.draw()           
         }
 
         setup()
